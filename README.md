@@ -6,7 +6,7 @@ Object detection package
 - Set path in file `model.py` and `mavi_object_detection.py`. (Search for `#TODO`)
 - Download the pre trained model into the `obj_det` directory
 - Copy `misc/mavi_animal_label_map.pbtxt` into `obj_det/data` directory
-
+- The conda environment (saved at `misc\conda_environment.yaml`) can be loaded as `conda env create -f conda_environment.yaml`.
 
 ### To run
 Run `mavi_object_detection.py` from one level up. It runs inference for file at `obj_det/test_images/image1.jpg`
