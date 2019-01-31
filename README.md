@@ -1,12 +1,12 @@
 # Animal detection module
-Object detection package
+Object detection package with caffe
+SSD MobileNet tensorflow models were not suppoted by Intel Movidius NCS SDK2. Hence shifting to caffe.
 
 ### Initial setup
-- Install [Tensorflow object detection API]. Alias `models/research/object_detection` as `obj_det`. Ensure path is set correctly.
-- Set path in file `model.py` and `mavi_object_detection.py`. (Search for `#TODO`)
-- Download the pre trained model into the `obj_det` directory
-- Copy `misc/mavi_animal_label_map.pbtxt` into `obj_det/data` directory
-- The conda environment (saved at `misc\conda_environment.yaml`) can be loaded as `conda env create -f conda_environment.yaml`.
+- Install [ssd caffe]. Ensure paths are set correctly.
+- Copy the pretrained model folder (having`*.prototxt` and `*.caffemodel`) into `MobileNet-SSD/models/`
+- Set path in file `caffe_model.py` and `mavi_object_detection.py`. (Search for `#TODO`)
+- The conda environment (saved at `misc\conda_env_ssd.yml`) can be loaded as `conda env create -f conda_env_ssd.yml`.
 
 ### To run
 Run `mavi_object_detection.py` from one level up. It runs inference for file at `obj_det/test_images/image1.jpg`
@@ -15,4 +15,4 @@ Run `mavi_object_detection.py` from one level up. It runs inference for file at 
 Model is fine tuned on Animal dataset (dog and cow) obtained from [website].
 
 [website]: http://www.cse.iitd.ac.in/mavi/datasets.html
-[Tensorflow object detection API]: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md
+[ssd caffe]: https://github.com/chuanqi305/MobileNet-SSD
